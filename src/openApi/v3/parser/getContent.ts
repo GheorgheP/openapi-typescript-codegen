@@ -9,6 +9,9 @@ export function getContent(openApi: OpenApi, content: Dictionary<OpenApiMediaTyp
         content['application/json-patch+json'] &&
         content['application/json-patch+json'].schema
     ) || (
+        content['application/ld+json'] &&
+        content['application/ld+json'].schema
+    ) || (
         content['application/json'] &&
         content['application/json'].schema
     ) || (
