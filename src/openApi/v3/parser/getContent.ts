@@ -6,6 +6,9 @@ import type { OpenApiSchema } from '../interfaces/OpenApiSchema';
 export function getContent(openApi: OpenApi, content: Dictionary<OpenApiMediaType>): OpenApiSchema | null {
     /* prettier-ignore */
     return (
+        content['application/ld+json'] &&
+        content['application/ld+json'].schema
+    ) ||  (
         content['application/json-patch+json'] &&
         content['application/json-patch+json'].schema
     ) || (
